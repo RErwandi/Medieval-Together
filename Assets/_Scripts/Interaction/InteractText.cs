@@ -1,7 +1,6 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Reynold.InventorySystem
+namespace Reynold.Interaction
 {
     public class InteractText : MonoBehaviour
     {
