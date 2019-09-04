@@ -1,24 +1,40 @@
-﻿using UnityEngine;
+﻿using System;
+using Reynold.Event;
+using UnityEngine;
 
 namespace Reynold.Interaction
 {
-    public class InteractText : MonoBehaviour
+    public class InteractView : MonoBehaviour, IEventListener<InteractionEvent>
     {
         public RectTransform canvasRect;
+        public GameObject interactObject;
         public GameObject target;
 
         private Camera mainCamera;
-        
-        
+
+        private void OnEnable()
+        {
+            this.EventStartListening();
+        }
+
+        private void OnDisable()
+        {
+            this.EventStopListening();
+        }
+
         void Start()
         {
             mainCamera = Camera.main;
+            interactObject.SetActive(false);
         }
 
         void Update()
         {
             if (target == null)
+            {
                 return;
+            }
+                
             
             // Offset position above object bbox (in world space)
             var position = target.transform.position;
@@ -35,6 +51,21 @@ namespace Reynold.Interaction
  
             // Set
             transform.localPosition = canvasPos;
+        }
+
+        public void OnEvent(InteractionEvent eventType)
+        {
+            switch (eventType.type)
+            {
+                case InteractionType.Enter:
+                    target = eventType.interactable.gameObject;
+                    interactObject.SetActive(true);
+                    break;
+                case InteractionType.Exit:
+                    target = null;
+                    interactObject.SetActive(target != null);
+                    break;
+            }
         }
     }
 }

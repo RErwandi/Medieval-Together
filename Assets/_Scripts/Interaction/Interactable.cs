@@ -1,21 +1,15 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using Reynold.Event;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Reynold.Interaction
 {
     public class Interactable : MonoBehaviour
     {
         [SerializeField] private Collider interactTrigger;
-        
-        void Start()
-        {
-        
-        }
-        
-        void Update()
-        {
-        
-        }
+        public UnityEvent onInteract;
 
         [Button(ButtonSizes.Medium)]
         [EnableIf("@this.interactTrigger == null")]
