@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Reynold.Input
+namespace Reynold.Medieval
 {
     public class MyInputAction : IInputActionCollection
     {

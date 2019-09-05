@@ -1,10 +1,7 @@
-﻿using System;
-using Reynold.Event;
-using Reynold.Input;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Reynold.Interaction
+namespace Reynold.Medieval
 {
     public enum InteractionType {Enter, Exit}
     

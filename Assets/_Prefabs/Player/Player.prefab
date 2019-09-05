@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4331340649288715582}
   - component: {fileID: 4331340649288715553}
   - component: {fileID: 4331340649288715583}
+  - component: {fileID: 4331340650129769808}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +86,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4331340649493317470}
+--- !u!114 &4331340650129769808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4331340649288715555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647f6005d6f0dce46b6c33925f2d6ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4331340649502625774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,38 +149,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9570480, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 957a8c806ff714748950d3a5e02c363f, type: 2}
     - target: {fileID: 115648, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
       propertyPath: m_Name
       value: Model
       objectReference: {fileID: 0}
-    - target: {fileID: 130960, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 163208, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 124244, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192606, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 178646, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 159246, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 9570480, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 957a8c806ff714748950d3a5e02c363f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
 --- !u!4 &4331340649503121042 stripped

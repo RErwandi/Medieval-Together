@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Reynold.Tools
+namespace Reynold.Medieval
 {
 	/// <summary>
 	/// Persistent singleton.

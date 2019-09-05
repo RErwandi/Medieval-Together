@@ -1,7 +1,6 @@
-﻿using Reynold.Input;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Reynold.Player
+namespace Reynold.Medieval
 {
     [RequireComponent(typeof(CharacterController))]
     public class PlayerMovement : MonoBehaviour

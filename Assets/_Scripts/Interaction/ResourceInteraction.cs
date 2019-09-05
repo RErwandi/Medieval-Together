@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Reynold.Resource;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Reynold.Interaction
+namespace Reynold.Medieval
 {
     public enum ModificationType {Add, Substract}
     public class ResourceInteraction : MonoBehaviour

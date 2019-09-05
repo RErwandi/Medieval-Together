@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Reynold.Event
+namespace Reynold.Medieval
 {
     /// <summary>
     /// GameEvent are used throughout the game for general game events (game started, game ended, life lost, etc.)

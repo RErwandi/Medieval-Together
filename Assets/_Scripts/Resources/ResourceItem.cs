@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Reynold.Resource
+namespace Reynold.Medieval
 {
     public enum ResourceType {Wood, Stone}
     

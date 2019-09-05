@@ -1,8 +1,6 @@
-﻿using System;
-using Reynold.Event;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Reynold.Interaction
+namespace Reynold.Medieval
 {
     public class InteractView : MonoBehaviour, IEventListener<InteractionEvent>
     {

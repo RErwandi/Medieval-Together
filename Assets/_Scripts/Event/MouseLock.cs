@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Reynold.Event
+namespace Reynold.Medieval
 {
     public struct MouseLockEvent
     {

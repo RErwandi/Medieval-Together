@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Reynold.Tools;
 using UnityEngine;
 
-namespace Reynold.Resource
+namespace Reynold.Medieval
 {
     [System.Serializable]
     public class Resource
