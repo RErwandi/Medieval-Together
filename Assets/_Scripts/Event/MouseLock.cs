@@ -2,19 +2,22 @@
 
 namespace Reynold.Medieval
 {
+    /// <summary>
+    /// MouseLockEvent used to tell if we should lock the cursor or not
+    /// </summary>
     public struct MouseLockEvent
     {
-        public bool IsLock;
-        public MouseLockEvent(bool b)
+        public bool lockCursor;
+        public MouseLockEvent(bool lockCursor)
         {
-            IsLock = b;
+            this.lockCursor = lockCursor;
         }
 
         private static MouseLockEvent e;
 
-        public static void Trigger(bool b)
+        public static void Trigger(bool lockCursor)
         {
-            e.IsLock = b;
+            e.lockCursor = lockCursor;
             EventManager.TriggerEvent(e);
         }
     }
@@ -40,7 +43,7 @@ namespace Reynold.Medieval
 
         public void OnEvent(MouseLockEvent eventType)
         {
-            switch (eventType.IsLock)
+            switch (eventType.lockCursor)
             {
                 case true:
                     Cursor.lockState = CursorLockMode.Locked;

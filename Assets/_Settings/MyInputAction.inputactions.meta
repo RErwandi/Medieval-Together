@@ -11,4 +11,4 @@ ScriptedImporter:
   generateWrapperCode: 1
   wrapperCodePath: Assets/_Scripts/Input/MyInputAction.cs
   wrapperClassName: 
-  wrapperCodeNamespace: Reynold.Input
+  wrapperCodeNamespace: Reynold.Medieval

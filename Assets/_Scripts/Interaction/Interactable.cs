@@ -6,7 +6,7 @@ namespace Reynold.Medieval
 {
     public class Interactable : MonoBehaviour
     {
-        [SerializeField] private Collider interactTrigger;
+        [SerializeField] private Collider interactTrigger = null;
         public UnityEvent onInteract;
 
         [Button(ButtonSizes.Medium)]

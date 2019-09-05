@@ -5,6 +5,9 @@ namespace Reynold.Medieval
 {
     public enum InteractionType {Enter, Exit}
     
+    /// <summary>
+    /// InteractionEvent used to tell when player interacting with something
+    /// </summary>
     public struct InteractionEvent
     {
         public Interactable interactable;

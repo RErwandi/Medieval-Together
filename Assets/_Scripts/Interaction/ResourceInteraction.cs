@@ -2,7 +2,7 @@
 
 namespace Reynold.Medieval
 {
-    public enum ModificationType {Add, Substract}
+    public enum ModificationType {Add, Subtract}
     public class ResourceInteraction : MonoBehaviour
     {
         public ResourceType resourceType;
@@ -12,7 +12,7 @@ namespace Reynold.Medieval
         public void AddResource()
         {
             var amount = resourceAmount;
-            if (modification == ModificationType.Substract)
+            if (modification == ModificationType.Subtract)
                 amount = -amount;
             ResourcesManager.Instance.AddResource(resourceType, amount);
         }
