@@ -53,6 +53,15 @@ namespace EZ.ScriptableObjectArchitecture
     {
         protected readonly List<IGameEventListener> Listeners = new List<IGameEventListener>();
 
+        [Button(ButtonSizes.Medium)]
+        void DebugRaise()
+        {
+            foreach (var listener in Listeners)
+            {
+                listener.OnEventRaised();
+            }
+        }
+        
         public void Raise()
         {
             foreach (var listener in Listeners)

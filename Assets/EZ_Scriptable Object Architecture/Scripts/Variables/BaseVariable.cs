@@ -5,12 +5,11 @@ namespace EZ.ScriptableObjectArchitecture
 {
     public abstract class BaseVariable : GameEventBase
     {
-        public abstract Type Type { get; }
-        public abstract object BaseValue { get; set; }
     }
+    
     public abstract class BaseVariable<T> : BaseVariable
     {
-        public virtual T Value
+        public T Value
         {
             get => value;
             set
@@ -19,8 +18,8 @@ namespace EZ.ScriptableObjectArchitecture
                 Raise();
             }
         }
-        public override Type Type => typeof(T);
-        public override object BaseValue
+        public virtual Type Type => typeof(T);
+        public virtual object BaseValue
         {
             get => value;
             set
@@ -33,15 +32,11 @@ namespace EZ.ScriptableObjectArchitecture
         [SerializeField]
         protected T value = default(T);
 
-        public virtual T SetValue(T value)
+        public T SetValue(T value)
         {
             return value;
         }
-        public virtual T SetValue(BaseVariable<T> value)
-        {
-            return value.Value;
-        }
-        
+
         public override string ToString()
         {
             return value == null ? "null" : value.ToString();
