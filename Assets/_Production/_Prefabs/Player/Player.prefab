@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableObject: {fileID: 11400000, guid: d18de4679ad3f0d4392d836e5195e2fc, type: 2}
+  onAbleInteract: {fileID: 11400000, guid: c9e6bdc99e6cc1644901e334494e1072, type: 2}
+  onUnableInteract: {fileID: 11400000, guid: 31bca47270436374290b5614de86dbdb, type: 2}
 --- !u!1001 &4331340649502625774
 PrefabInstance:
   m_ObjectHideFlags: 0

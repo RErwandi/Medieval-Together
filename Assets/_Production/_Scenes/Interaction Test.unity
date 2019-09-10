@@ -1093,18 +1093,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4331340650129769808, guid: 6df56900c2df2c140b00d45fb755e844,
-        type: 3}
-      propertyPath: onAbleInteract
-      value: 
-      objectReference: {fileID: 11400000, guid: c9e6bdc99e6cc1644901e334494e1072,
-        type: 2}
-    - target: {fileID: 4331340650129769808, guid: 6df56900c2df2c140b00d45fb755e844,
-        type: 3}
-      propertyPath: onUnableInteract
-      value: 
-      objectReference: {fileID: 11400000, guid: 31bca47270436374290b5614de86dbdb,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6df56900c2df2c140b00d45fb755e844, type: 3}
 --- !u!1001 &8742935190104687211
@@ -1192,12 +1180,12 @@ PrefabInstance:
     - target: {fileID: 8742935191007597216, guid: dd19058aca283784a97068abfd6707d3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.10238637
+      value: 0.102386385
       objectReference: {fileID: 0}
     - target: {fileID: 8742935191007597216, guid: dd19058aca283784a97068abfd6707d3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.045283694
+      value: -0.045283742
       objectReference: {fileID: 0}
     - target: {fileID: 8742935191007597216, guid: dd19058aca283784a97068abfd6707d3,
         type: 3}

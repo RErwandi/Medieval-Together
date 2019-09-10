@@ -53,7 +53,7 @@ namespace Reynold.Medieval
         {
             if(interactableObject.Value != null)
             {
-                //interactableObject.onInteract.Invoke();
+                interactableObject.Value.GetComponent<Interactable>().onInteract.Invoke();
             }
         }
     }
