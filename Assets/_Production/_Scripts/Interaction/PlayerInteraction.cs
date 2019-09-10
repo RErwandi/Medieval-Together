@@ -1,36 +1,14 @@
-﻿using Sirenix.OdinInspector;
+﻿using EZ.ScriptableObjectArchitecture;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Reynold.Medieval
 {
-    public enum InteractionType {Enter, Exit}
-    
-    /// <summary>
-    /// InteractionEvent used to tell when player interacting with something
-    /// </summary>
-    public struct InteractionEvent
-    {
-        public Interactable interactable;
-        public InteractionType type;
-        
-        public InteractionEvent(Interactable interactable, InteractionType type)
-        {
-            this.interactable = interactable;
-            this.type = type;
-        }
-
-        private static InteractionEvent e;
-    
-        public static void Trigger(Interactable interactable, InteractionType type)
-        {
-            e.interactable = interactable;
-            e.type = type;
-        }
-    }
-    
     public class PlayerInteraction : MonoBehaviour
     {
-        [ReadOnly] [ShowInInspector] private Interactable interactableObject;
+        [SerializeField] private GameObjectVariable interactableObject = default;
+        [SerializeField] private GameEvent onAbleInteract = default;
+        [SerializeField] private GameEvent onUnableInteract = default;
 
         private MyInputAction input;
 
@@ -55,20 +33,28 @@ namespace Reynold.Medieval
             var interactable = other.GetComponentInParent<Interactable>();
             if (interactable == null)
                 return;
-            interactableObject = interactable;
-            InteractionEvent.Trigger(interactable, InteractionType.Enter);
+            interactableObject.Value = interactable.gameObject;
+            onAbleInteract.Raise();
         }
 
         private void OnTriggerExit(Collider other)
         {
-            interactableObject = null;
-            InteractionEvent.Trigger(null, InteractionType.Exit);
+            var interactable = other.GetComponentInParent<Interactable>();
+            if (interactable == null)
+                return;
+            if (interactableObject.Value == interactable.gameObject)
+            {
+                interactableObject.Value = null;
+                onUnableInteract.Raise();
+            }
         }
 
-        void TryInteract()
+        private void TryInteract()
         {
-            if(interactableObject != null)
-                interactableObject.onInteract.Invoke();
+            if(interactableObject.Value != null)
+            {
+                //interactableObject.onInteract.Invoke();
+            }
         }
     }
 }

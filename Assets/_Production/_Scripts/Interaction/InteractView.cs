@@ -1,31 +1,33 @@
-﻿using UnityEngine;
+﻿using System;
+using EZ.ScriptableObjectArchitecture;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Reynold.Medieval
 {
     public class InteractView : MonoBehaviour
     {
         public RectTransform canvasRect;
-        public GameObject interactObject;
-        public GameObject target;
+        [FormerlySerializedAs("interactObject")] public GameObject interactView;
+        [SerializeField] private GameObjectVariable target = default;
 
         private Camera mainCamera;
 
         void Start()
         {
             mainCamera = Camera.main;
-            interactObject.SetActive(false);
+            interactView.SetActive(false);
         }
 
         void Update()
         {
-            if (target == null)
+            if (target.Value == null)
             {
                 return;
             }
-                
             
             // Offset position above object (in world space)
-            var position = target.transform.position;
+            var position = target.Value.transform.position;
 
             // Final position of marker above GO in world space
             Vector3 offsetPos = new Vector3(position.x, position.y, position.z);
@@ -40,19 +42,14 @@ namespace Reynold.Medieval
             transform.localPosition = canvasPos;
         }
 
-        public void OnEvent(InteractionEvent eventType)
+        public void ShowInteractView()
         {
-            switch (eventType.type)
-            {
-                case InteractionType.Enter:
-                    target = eventType.interactable.gameObject;
-                    interactObject.SetActive(true);
-                    break;
-                case InteractionType.Exit:
-                    target = null;
-                    interactObject.SetActive(target != null);
-                    break;
-            }
+            interactView.SetActive(true);
+        }
+
+        public void HideInteractView()
+        {
+            interactView.SetActive(false);
         }
     }
 }
