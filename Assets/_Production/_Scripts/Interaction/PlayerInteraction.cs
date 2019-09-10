@@ -25,7 +25,6 @@ namespace Reynold.Medieval
         {
             e.interactable = interactable;
             e.type = type;
-            EventManager.TriggerEvent(e);
         }
     }
     

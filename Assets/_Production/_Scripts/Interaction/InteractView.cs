@@ -2,23 +2,13 @@
 
 namespace Reynold.Medieval
 {
-    public class InteractView : MonoBehaviour, IEventListener<InteractionEvent>
+    public class InteractView : MonoBehaviour
     {
         public RectTransform canvasRect;
         public GameObject interactObject;
         public GameObject target;
 
         private Camera mainCamera;
-
-        private void OnEnable()
-        {
-            this.EventStartListening();
-        }
-
-        private void OnDisable()
-        {
-            this.EventStopListening();
-        }
 
         void Start()
         {

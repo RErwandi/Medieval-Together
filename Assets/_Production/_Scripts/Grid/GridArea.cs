@@ -35,9 +35,6 @@ namespace Reynold.Medieval
                     mesh.enabled = true;
                     ChangeMaterial(soilMaterial);
                     break;
-                case GridState.Soil:
-                    GameEvent.Trigger("Open Shop");
-                    break;
             }
         }
 
