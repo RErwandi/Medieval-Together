@@ -66,13 +66,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableInput: 1
-  baseSpeed: 3
+  baseSpeed:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: d9e1b6c234a883842afff40db81950e9, type: 2}
   lookAtSpeed: 0.8
   gravityMultiplier: 1
   velocityDampGround: 0.1
   velocityDampAir: 0.7
   enableSprint: 1
-  sprintSpeed: 5
+  sprintSpeed:
+    useConstant: 0
+    constantValue: 0
+    variable: {fileID: 11400000, guid: 33e77d331f071104b91795ea90d9ca5a, type: 2}
 --- !u!114 &4331340649288715583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +111,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4331340649288715552}
     m_Modifications:
+    - target: {fileID: 115648, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
+      propertyPath: m_Name
+      value: Model
+      objectReference: {fileID: 0}
     - target: {fileID: 495996, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -148,10 +158,6 @@ PrefabInstance:
     - target: {fileID: 495996, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 115648, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
-      propertyPath: m_Name
-      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 9570480, guid: 5ad43ee3802caa04ab0928a13c462a56, type: 3}
       propertyPath: m_Controller

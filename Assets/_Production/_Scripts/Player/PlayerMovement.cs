@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using EZ.ScriptableObjectArchitecture;
+using UnityEngine;
 
 namespace Reynold.Medieval
 {
@@ -6,9 +7,10 @@ namespace Reynold.Medieval
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private bool enableInput = true;
+
         [Header("Movement Properties")]
-        [SerializeField] private float baseSpeed = 2f;
-        [SerializeField] private float lookAtSpeed = 0.8f;
+        [SerializeField] private FloatReference baseSpeed = default;
+        [SerializeField] private float lookAtSpeed = default;
         [SerializeField] private float gravityMultiplier = 1f;
         
         [Header("Damp Properties")]
@@ -17,7 +19,7 @@ namespace Reynold.Medieval
 
         [Header("Sprint Properties")]
         [SerializeField] private bool enableSprint = true;
-        [SerializeField] private float sprintSpeed = 3f;
+        [SerializeField] private FloatReference sprintSpeed = default;
 
         private MyInputAction input;
         private CharacterController cc;
@@ -86,9 +88,9 @@ namespace Reynold.Medieval
             this.moveDir = new Vector3(movement.x, 0f, movement.y);
             movement.Normalize();
             moveDir.Normalize();
-            float speed = baseSpeed;
+            float speed = baseSpeed.Value;
             if (isSprint && enableSprint)
-                speed = sprintSpeed;
+                speed = sprintSpeed.Value;
             this.targetSpeed = Mathf.Lerp(0.0f, speed, movement.sqrMagnitude);
             
             if (cc.isGrounded && Physics.Raycast(transform.position, -Vector3.up, cc.stepOffset * 2f))
